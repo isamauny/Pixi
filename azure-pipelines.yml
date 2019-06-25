@@ -20,5 +20,6 @@ steps:
   displayName: Build and Push
   inputs:
     command: buildAndPush
-    repository: 42css.azurecr.io/pixi:app
+    repository: 42css.azurecr.io/pixi
+    tags: app
 
