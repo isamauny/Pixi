@@ -10,12 +10,9 @@ pool:
   vmImage: 'ubuntu-16.04'
 
 steps:
-- task: NodeTool@0
+- task: DockerLogin
+  displayName: Login to ACR
   inputs:
-    versionSpec: '8.x'
-  displayName: 'Install Node.js 8'
+    command: login
+    containerRegistry: azureRegistryConnection
 
-- script: |
-    npm install
-    npm run build
-  displayName: 'npm install and build'
