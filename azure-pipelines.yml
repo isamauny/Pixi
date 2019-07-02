@@ -3,6 +3,13 @@
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
 
+variables:
+    azureSubscriptionEndpoint: 42cssSubscription
+    azureContainerRegistry: 42css.azurecr.io
+    azureResourceGroup: AzureDevOps-Tests
+    kubernetesCluster: PixiCluster
+    namespace: pixi
+
 trigger:
 - master
 
@@ -17,9 +24,20 @@ steps:
     containerRegistry: azureRegistryConnection
 
 - task: Docker@2
-  displayName: Build and Push
+  displayName: Build Pixi App and Push
   inputs:
     command: buildAndPush
-    repository: 42css.azurecr.io/pixi
+    repository: $(azureContainerRegistry)/pixi
     tags: app
     Dockerfile: app/Dockerfile
+
+- task: Kubernetes@1
+  displayName: kubectl apply
+  inputs:
+    connectionType: Azure Resource Manager
+    azureSubscriptionEndpoint: $(azureSubscriptionEndpoint)
+    azureResourceGroup: $(azureResourceGroup)
+    kubernetesCluster: $(kubernetesCluster)  
+    namespace: $(namespace)
+    command: apply
+    arguments: -f deploy/deployment.yaml 
