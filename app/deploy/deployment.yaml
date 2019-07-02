@@ -64,7 +64,7 @@ spec:
       - name:  docker-creds
       containers:
       - name: pixiapp
-        image: 42css.azurecr.io/pixi:app
+        image: 42css.azurecr.io/42css.azurecr.io/pixi:app
         ports:
           - containerPort: 8000
           - containerPort: 8090
