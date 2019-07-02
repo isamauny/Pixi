@@ -27,7 +27,7 @@ steps:
   displayName: Build Pixi App and Push
   inputs:
     command: buildAndPush
-    repository: $(azureContainerRegistry)/pixi
+    repository: pixi
     tags: app
     Dockerfile: app/Dockerfile
 
