@@ -7,7 +7,7 @@ variables:
     azureSubscriptionEndpoint: 42cssSubscription
     azureContainerRegistry: 42css.azurecr.io
     azureResourceGroup: AzureDevOps-Tests
-    kubernetesCluster: PixiCluster
+    kubernetesCluster: PixiClusterGitlab
     namespace: pixi
 
 trigger:
