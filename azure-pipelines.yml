@@ -40,4 +40,4 @@ steps:
     kubernetesCluster: $(kubernetesCluster)  
     namespace: $(namespace)
     command: apply
-    arguments: -f deploy/deployment.yaml 
+    arguments: -f app/deploy/deployment.yaml 
