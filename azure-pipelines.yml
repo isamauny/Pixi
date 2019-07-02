@@ -23,7 +23,7 @@ steps:
     samplestring: string
   env:
     API_KEY: $(API_KEY)
-    OPENAPI_PATH: 'app/oasfiles/*'
+    OPENAPI_PATH: 'app/oasfiles/swagger.json'
     MIN_SCORE: 50
 
 - task: PublishTestResults@2
