@@ -61,7 +61,7 @@ spec:
         app: pixiapp
     spec:
       imagePullSecrets:
-      - name:  docker-registry-creds
+      - name:  docker-creds
       containers:
       - name: pixiapp
         image: 42css.azurecr.io/pixi:app

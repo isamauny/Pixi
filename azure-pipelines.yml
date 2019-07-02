@@ -37,7 +37,8 @@ steps:
     connectionType: Azure Resource Manager
     azureSubscriptionEndpoint: $(azureSubscriptionEndpoint)
     azureResourceGroup: $(azureResourceGroup)
-    kubernetesCluster: $(kubernetesCluster)  
+    azureSubscriptionEndpointForSecrets: $(azureSubscriptionEndpoint)
+    kubernetesCluster: $(kubernetesCluster)
     namespace: $(namespace)
     command: apply
     arguments: -f app/deploy/deployment.yaml 
