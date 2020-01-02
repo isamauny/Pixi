@@ -584,7 +584,7 @@
       }
     }
   },
-  "host": "pixiapp.42crunch-cloud.com",
+  "host": "${host}",
   "basePath": "/",
   "schemes": [
     "https"
